@@ -25,6 +25,9 @@ const flowDescriptions = {
   }
 };
 
+const CONCIERGE_EMAIL = 'blessthewinnerofgod@gmail.com';
+const CONCIERGE_STORAGE_KEY = 'aurvo-concierge-queue';
+
 let marqueeAnimationId;
 let timelineIndex = 0;
 let toastTimeoutId;
@@ -217,34 +220,195 @@ function initToast() {
   });
 }
 
+function formatConciergePayload(formData, actLabel) {
+  const clean = (value) => (typeof value === 'string' ? value.trim() : '');
+  const timestamp = new Date();
+  return {
+    name: clean(formData.get('nombre')),
+    email: clean(formData.get('email')),
+    act: clean(formData.get('acto')),
+    actLabel: clean(actLabel),
+    message: clean(formData.get('mensaje')),
+    createdAt: timestamp.toISOString()
+  };
+}
+
+function persistConciergeRequest(payload) {
+  try {
+    const stored = localStorage.getItem(CONCIERGE_STORAGE_KEY);
+    const parsed = stored ? JSON.parse(stored) : [];
+    const queue = Array.isArray(parsed) ? parsed : [];
+    queue.unshift(payload);
+    localStorage.setItem(CONCIERGE_STORAGE_KEY, JSON.stringify(queue.slice(0, 10)));
+  } catch (error) {
+    // Storage might be unavailable; fail silently to keep the flow unblocked.
+  }
+}
+
+function buildConciergeEmail(payload) {
+  const date = payload.createdAt ? new Date(payload.createdAt) : new Date();
+  let formattedDate;
+
+  if (!Number.isNaN(date.getTime())) {
+    try {
+      const formatter = new Intl.DateTimeFormat('es-ES', {
+        dateStyle: 'full',
+        timeStyle: 'short'
+      });
+      formattedDate = formatter.format(date);
+    } catch (error) {
+      formattedDate = date.toLocaleString('es-ES');
+    }
+  }
+
+  if (!formattedDate) {
+    formattedDate = new Date().toLocaleString('es-ES');
+  }
+
+  const lines = [
+    'Solicitud registrada desde la Aurvo HyperApp.',
+    `Nombre o círculo: ${payload.name || 'No indicado'}`,
+    `Correo de contacto: ${payload.email || 'No indicado'}`,
+    `Acto prioritario: ${payload.actLabel || payload.act || 'No especificado'}`,
+    '',
+    'Mensaje para el consejo:',
+    payload.message || '—',
+    '',
+    `Fecha y hora de envío: ${formattedDate}`
+  ];
+
+  return {
+    subject: `Aurvo HyperApp · ${payload.name || 'Nueva solicitud'}`,
+    body: lines.join('\n')
+  };
+}
+
+async function dispatchConciergeEmail(payload) {
+  const { subject, body } = buildConciergeEmail(payload);
+  const mailtoLink = `mailto:${CONCIERGE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  let launched = false;
+
+  try {
+    const newWindow = window.open(mailtoLink, '_blank', 'noopener,noreferrer');
+    if (newWindow) {
+      launched = true;
+      newWindow.focus();
+    }
+  } catch (error) {
+    launched = false;
+  }
+
+  if (!launched) {
+    try {
+      window.location.href = mailtoLink;
+      launched = true;
+    } catch (error) {
+      launched = false;
+    }
+  }
+
+  if (!launched && navigator.share) {
+    try {
+      await navigator.share({
+        title: subject,
+        text: body
+      });
+      launched = true;
+    } catch (error) {
+      launched = false;
+    }
+  }
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    try {
+      await navigator.clipboard.writeText(`${subject}\n\n${body}`);
+    } catch (error) {
+      // Clipboard may require permissions; ignore failure.
+    }
+  }
+
+  persistConciergeRequest({ ...payload, subject, body });
+
+  return { launched, subject, body };
+}
+
+function setConciergeStatus(element, text, state) {
+  if (!element) return;
+  element.textContent = text;
+  if (state) {
+    element.dataset.status = state;
+  } else {
+    delete element.dataset.status;
+  }
+}
+
 function initConciergeForm() {
   const form = document.querySelector('[data-concierge]');
   if (!form) return;
 
+  const statusElement = form.querySelector('[data-concierge-status]');
+  const submitButton = form.querySelector('button[type="submit"]');
+  const toast = document.querySelector('[data-toast]');
+  const toastMessage = document.querySelector('[data-toast-message]');
+
+  const setLoadingState = (isLoading) => {
+    if (!submitButton) return;
+    const defaultLabel = submitButton.dataset.submitLabel || submitButton.textContent;
+    const loadingLabel = submitButton.dataset.loadingLabel || 'Enviando…';
+    submitButton.disabled = isLoading;
+    submitButton.textContent = isLoading ? loadingLabel : defaultLabel;
+  };
+
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    const formData = new FormData(form);
-    const name = formData.get('nombre') || 'visionaria';
-    const act = formData.get('acto') || 'acto iluminado';
-    const toastTrigger = document.querySelector('[data-toast]');
-    if (toastTrigger) {
-      const message = `Solicitud registrada para ${name} · ${act}. El consejo responderá en 47 minutos.`;
-      const toastMessage = document.querySelector('[data-toast-message]');
-      if (toastMessage) {
-        toastMessage.textContent = message;
-      }
-      toastTrigger.hidden = false;
-      toastTrigger.classList.add('is-visible');
-      clearTimeout(toastTimeoutId);
-      toastTimeoutId = window.setTimeout(() => {
-        toastTrigger.classList.remove('is-visible');
-        toastTimeoutId = window.setTimeout(() => {
-          toastTrigger.hidden = true;
-        }, 320);
-      }, 2800);
+
+    if (typeof form.reportValidity === 'function' && !form.reportValidity()) {
+      setConciergeStatus(statusElement, 'Revisa los campos marcados y vuelve a intentarlo.', 'error');
+      return;
     }
 
-    form.reset();
+    const formData = new FormData(form);
+    const actField = form.querySelector('select[name="acto"]');
+    const actLabel = actField && actField.options[actField.selectedIndex]
+      ? actField.options[actField.selectedIndex].textContent
+      : '';
+
+    const payload = formatConciergePayload(formData, actLabel);
+
+    setLoadingState(true);
+    setConciergeStatus(statusElement, 'Invocando al consejo iluminatti…', 'pending');
+
+    dispatchConciergeEmail(payload)
+      .then(({ launched }) => {
+        const successMessage = `Solicitud enviada para ${payload.name || 'tu círculo visionario'}.`;
+        const followUp = launched
+          ? 'Revisa tu bandeja de correo para finalizar la coordinación.'
+          : 'Hemos copiado los detalles para que puedas reenviarlos manualmente.';
+        setConciergeStatus(statusElement, `${successMessage} ${followUp}`, 'success');
+
+        if (toast && toastMessage) {
+          toastMessage.textContent = `${payload.name || 'Círculo visionario'} · Activo ${payload.actLabel || payload.act || 'personalizado'}`;
+          toast.hidden = false;
+          requestAnimationFrame(() => {
+            toast.classList.add('is-visible');
+          });
+          clearTimeout(toastTimeoutId);
+          toastTimeoutId = window.setTimeout(() => {
+            toast.classList.remove('is-visible');
+            toastTimeoutId = window.setTimeout(() => {
+              toast.hidden = true;
+            }, 300);
+          }, 3200);
+        }
+
+        form.reset();
+      })
+      .catch(() => {
+        setConciergeStatus(statusElement, 'No pudimos abrir tu cliente de correo. Copia el mensaje y envíalo manualmente.', 'error');
+      })
+      .finally(() => {
+        setLoadingState(false);
+      });
   });
 }
 

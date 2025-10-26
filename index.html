@@ -219,14 +219,14 @@
           <h2>El consejo iluminatti responde 24/7</h2>
           <p class="screen-lead">Convoca a estrategas, diseñadores y arquitectos tecnológicos desde la misma app. Coordinamos agendas, enviamos entregables y trazamos próximos hitos.</p>
         </div>
-        <form class="concierge-form" data-concierge>
+        <form class="concierge-form" data-concierge novalidate>
           <label>
             <span>Nombre ritual</span>
-            <input type="text" name="nombre" placeholder="Tu nombre y círculo" required>
+            <input type="text" name="nombre" placeholder="Tu nombre y círculo" autocomplete="name" required>
           </label>
           <label>
             <span>Contacto</span>
-            <input type="email" name="email" placeholder="hola@visionaria.com" required>
+            <input type="email" name="email" placeholder="hola@visionaria.com" autocomplete="email" required>
           </label>
           <label>
             <span>Acto prioritario</span>
@@ -241,7 +241,8 @@
             <span>Mensaje al consejo</span>
             <textarea name="mensaje" rows="3" placeholder="Describe la visión y el reto que deseas elevar."></textarea>
           </label>
-          <button class="primary-button" type="submit">Programar círculo privado</button>
+          <button class="primary-button" type="submit" data-submit-label="Programar círculo privado" data-loading-label="Enviando ceremonia…">Programar círculo privado</button>
+          <p class="form-status" data-concierge-status aria-live="polite" role="status"></p>
         </form>
         <div class="concierge-footer">
           <p>Tiempo medio de respuesta: <strong>47 minutos</strong>. Seguimiento humano + sintético continuo.</p>
