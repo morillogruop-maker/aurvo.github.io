@@ -1,286 +1,312 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahorra Ya IA | Tu aliado inteligente de finanzas</title>
-    <meta name="description" content="Ahorra Ya IA te ayuda a optimizar tus finanzas personales con recomendaciones personalizadas basadas en inteligencia artificial.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aurvo HyperApp | Hiperorquestación móvil iluminada</title>
+  <meta name="description" content="Aurvo HyperApp transforma el método iluminado de Aurvo en una experiencia móvil de hiperorquestación sintética para líderes visionarios.">
+  <meta name="theme-color" content="#0b0c21">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="app.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="assets/icon-aurvo.svg">
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-    <header class="hero" id="inicio">
-        <nav class="navbar">
-            <a class="logo" href="#inicio">Ahorra <span>Ya IA</span></a>
-            <button class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="menu" id="menu">
-                <li><a href="#beneficios">Beneficios</a></li>
-                <li><a href="#funcionalidades">Funcionalidades</a></li>
-                <li><a href="#precios">Planes</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a class="btn btn-secondary" href="#demo">Solicita demo</a></li>
-            </ul>
-        </nav>
-        <div class="hero__content">
-            <div class="hero__text">
-                <h1>La inteligencia artificial que hace crecer tus ahorros</h1>
-                <p>Ahorra Ya IA analiza tus hábitos de consumo, proyecta tus metas y te guía con recomendaciones accionables para lograr estabilidad financiera.</p>
-                <div class="hero__cta">
-                    <a class="btn btn-primary" href="#demo">Probar gratis</a>
-                    <a class="btn btn-link" href="#video" aria-label="Ver video de demostración">Ver video ▶</a>
-                </div>
-                <ul class="hero__stats">
-                    <li>
-                        <strong>+45%</strong>
-                        <span>ahorro promedio en 6 meses</span>
-                    </li>
-                    <li>
-                        <strong>12K</strong>
-                        <span>usuarios activos en LATAM</span>
-                    </li>
-                    <li>
-                        <strong>4.9/5</strong>
-                        <span>satisfacción de clientes</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="hero__media" id="video">
-                <div class="video-card" role="img" aria-label="Vista previa del panel de Ahorra Ya IA">
-                    <div class="video-card__badge">Nuevo panel inteligente</div>
-                    <div class="video-card__content">
-                        <h2>Predicciones de gasto semanales</h2>
-                        <p>Recibe alertas anticipadas cuando estás a punto de exceder tu presupuesto.</p>
-                        <div class="video-card__chart">
-                            <span style="--value: 72"></span>
-                            <span style="--value: 86"></span>
-                            <span style="--value: 64"></span>
-                            <span style="--value: 92"></span>
-                            <span style="--value: 75"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="aurvo-background" aria-hidden="true">
+    <div class="aurvo-background__gradient" data-dynamic-gradient data-theme="aurora"></div>
+    <div class="aurvo-background__grid"></div>
+    <div class="aurvo-background__orbs">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="app-shell" data-theme="aurora">
+    <header class="app-header">
+      <div class="status-bar" aria-hidden="true">
+        <span class="status-time">09:41</span>
+        <div class="status-icons">
+          <span class="status-icon status-icon--signal"></span>
+          <span class="status-icon status-icon--wifi"></span>
+          <span class="status-icon status-icon--battery"></span>
         </div>
+      </div>
+      <div class="brand-bar">
+        <div class="brand-mark" aria-hidden="true">A</div>
+        <div class="brand-copy">
+          <p class="brand-eyebrow">Aurvo HyperApp</p>
+          <p class="brand-title">Órbita ceremonial de hiperorquestación sintética</p>
+        </div>
+        <button class="ghost-button" type="button" data-panel-open aria-haspopup="dialog">Invocar círculo</button>
+      </div>
     </header>
 
-    <main>
-        <section class="partners" aria-label="Empresas que confían en Ahorra Ya IA">
-            <h2>Confían en nosotros</h2>
-            <div class="partners__logos">
-                <span>FinBalance</span>
-                <span>EcoWallet</span>
-                <span>Banco Prisma</span>
-                <span>Latam Fintech Hub</span>
-                <span>MercadoLocal</span>
+    <main class="app-main" data-screen-wrapper>
+      <section class="app-screen is-active" id="screen-home" aria-label="Inicio">
+        <div class="screen-header">
+          <p class="screen-eyebrow">Activa el modo auroral</p>
+          <h1>Tu estudio iluminatti ahora vibra como app móvil de lujo</h1>
+          <p class="screen-lead">Conduce lanzamientos, rituales y mediciones desde un lienzo táctil que fusiona estrategia, diseño y tecnología en una sola sinfonía portátil.</p>
+        </div>
+        <div class="hero-orbit">
+          <div class="hero-orbit__core"></div>
+          <div class="hero-orbit__ring hero-orbit__ring--outer"></div>
+          <div class="hero-orbit__ring hero-orbit__ring--inner"></div>
+          <dl class="hero-orbit__stats">
+            <div>
+              <dt>Secuencias activas</dt>
+              <dd data-counter="124">124</dd>
             </div>
-        </section>
+            <div>
+              <dt>Retención ceremonial</dt>
+              <dd>96%</dd>
+            </div>
+            <div>
+              <dt>Tiempo a prototipo</dt>
+              <dd>12 días</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="synth-marquee">
+          <span class="synth-marquee__label">Modo vivo</span>
+          <div class="synth-marquee__track" data-sequence-track></div>
+        </div>
+        <div class="card-grid">
+          <article class="glass-card">
+            <h2>Hiperorquestación sintética</h2>
+            <p>Coreografías inteligentes que sincronizan tus equipos, automatizaciones y métricas con un toque.</p>
+            <button class="chip-button is-active" type="button" data-flow-button="orbit" aria-pressed="true">Ver órbita</button>
+          </article>
+          <article class="glass-card">
+            <h2>Experiencias multisensoriales</h2>
+            <p>Interfaces hápticas, microsonidos y luces dinámicas que convierten cada entrega en ceremonia.</p>
+            <button class="chip-button" type="button" data-flow-button="immersive" aria-pressed="false">Explorar</button>
+          </article>
+          <article class="glass-card">
+            <h2>Consejería perpetua</h2>
+            <p>Accede al consejo iluminatti, agenda círculos y recibe notificaciones con recomendaciones oraculares.</p>
+            <button class="chip-button" type="button" data-panel-open data-flow-button="concierge" aria-pressed="false">Reservar círculo</button>
+          </article>
+        </div>
+        <div class="flow-output" data-flow-output>
+          <span class="flow-output__badge">Órbita privilegiada</span>
+          <h3>Mapea tu lanzamiento en un lienzo sensorial</h3>
+          <p>Activa nodos, asigna guardianes y deja que la app trace dependencias iluminadas en tiempo real.</p>
+        </div>
+        <div class="quick-actions">
+          <button class="primary-button" type="button" data-toast-trigger>Solicitar demo oracular</button>
+          <button class="secondary-button" type="button" data-panel-open>Entrar al círculo privado</button>
+        </div>
+      </section>
 
-        <section class="benefits" id="beneficios">
-            <div class="section__header">
-                <span class="tag">Por qué elegirnos</span>
-                <h2>Beneficios que se sienten desde el primer mes</h2>
-                <p>Ahorra Ya IA se conecta con tus cuentas, entiende tu contexto financiero y te entrega un plan personalizado basado en tus metas.</p>
-            </div>
-            <div class="benefits__grid">
-                <article class="card">
-                    <h3>Recomendaciones accionables</h3>
-                    <p>Recibe sugerencias concretas basadas en IA para recortar gastos, automatizar ahorros y renegociar servicios.</p>
-                </article>
-                <article class="card">
-                    <h3>Seguimiento de metas</h3>
-                    <p>Crea metas personalizadas, visualiza el progreso y recibe recordatorios para mantener el ritmo.</p>
-                </article>
-                <article class="card">
-                    <h3>Seguridad bancaria</h3>
-                    <p>Integramos protocolos bancarios de grado empresarial con autenticación multifactor y cifrado AES-256.</p>
-                </article>
-            </div>
-        </section>
+      <section class="app-screen" id="screen-orchestra" aria-label="Hiperorquestación">
+        <div class="screen-header">
+          <p class="screen-eyebrow">Motor sintético</p>
+          <h2>La cámara de hiperorquestación dirige cada acto</h2>
+          <p class="screen-lead">Tres motores neurales armonizan estrategia, diseño y crecimiento. Ajusta parámetros, observa predicciones y lanza ceremonias con precisión cuántica.</p>
+        </div>
+        <div class="module-stack">
+          <article class="module-card">
+            <header>
+              <span class="module-badge">Motor A</span>
+              <h3>Oráculo estratégico</h3>
+            </header>
+            <p>Diagnóstico vivo con simulaciones, tableros y rutas que se recalculan según señales del mercado.</p>
+            <ul>
+              <li>Puntaje de alineación en tiempo real</li>
+              <li>Mapas de oportunidad reactivos</li>
+              <li>Briefs listos para equipos híbridos</li>
+            </ul>
+          </article>
+          <article class="module-card">
+            <header>
+              <span class="module-badge">Motor B</span>
+              <h3>Atelier inmersivo</h3>
+            </header>
+            <p>Un laboratorio táctil donde prototipos 3D, secuencias sonoras y microinteracciones se unen.</p>
+            <ul>
+              <li>Playbooks audiovisuales exportables</li>
+              <li>Componentes listos para multiplataforma</li>
+              <li>Pruebas hápticas con métricas instantáneas</li>
+            </ul>
+          </article>
+          <article class="module-card">
+            <header>
+              <span class="module-badge">Motor C</span>
+              <h3>Concierge perpetuo</h3>
+            </header>
+            <p>Automatiza lanzamientos, reactiva audiencias y agenda ceremonias con asistentes sintéticos.</p>
+            <ul>
+              <li>Secuenciación omnicanal programada</li>
+              <li>Alertas proactivas del consejo</li>
+              <li>Integración con paneles ejecutivos</li>
+            </ul>
+          </article>
+        </div>
+        <div class="timeline" aria-live="polite">
+          <div class="timeline__legend">
+            <span>Acto I</span>
+            <span>Acto II</span>
+            <span>Acto III</span>
+          </div>
+          <ol class="timeline__steps" data-timeline>
+            <li class="is-active">Encendido estratégico</li>
+            <li>Prototipado inmersivo</li>
+            <li>Crecimiento perpetuo</li>
+          </ol>
+          <div class="timeline__cta">
+            <button class="chip-button" type="button" data-timeline-advance>Sincronizar acto siguiente</button>
+          </div>
+        </div>
+        <div class="holo-panel">
+          <h3>Panel holo-sensorial</h3>
+          <p>Arrastra pilares, configura indicadores y observa cómo la cámara ajusta recursos y rituales.</p>
+          <div class="holo-panel__grid">
+            <button class="holo-tile" type="button" data-toast-trigger>Activar guardianes</button>
+            <button class="holo-tile" type="button" data-toast-trigger>Desplegar autoanálisis</button>
+            <button class="holo-tile" type="button" data-toast-trigger>Vincular métricas</button>
+            <button class="holo-tile" type="button" data-toast-trigger>Invocar luces guía</button>
+          </div>
+        </div>
+      </section>
 
-        <section class="features" id="funcionalidades">
-            <div class="feature">
-                <div class="feature__content">
-                    <span class="tag">IA conversacional</span>
-                    <h2>Un coach financiero disponible 24/7</h2>
-                    <p>Haz preguntas en lenguaje natural y recibe respuestas inmediatas con acciones prioritarias, análisis de gastos y simulaciones de escenarios.</p>
-                    <ul class="feature__list">
-                        <li>Chat contextual con tu historial financiero</li>
-                        <li>Alertas proactivas sobre gastos extraordinarios</li>
-                        <li>Tips personalizados para tu perfil de riesgo</li>
-                    </ul>
-                </div>
-                <div class="feature__media" role="img" aria-label="Interfaz del chat con Ahorra Ya IA"></div>
-            </div>
-            <div class="feature feature--reverse">
-                <div class="feature__content">
-                    <span class="tag">Automatización inteligente</span>
-                    <h2>Sincroniza cuentas y automatiza tu ahorro</h2>
-                    <p>Conecta tarjetas, billeteras digitales y fondos de inversión para que la IA transfiera automáticamente el excedente que no utilizas.</p>
-                    <ul class="feature__list">
-                        <li>Rastrea gastos en tiempo real</li>
-                        <li>Clasificación automática de movimientos</li>
-                        <li>Reglas de ahorro basadas en tus hábitos</li>
-                    </ul>
-                </div>
-                <div class="feature__media feature__media--analytics" role="img" aria-label="Panel de análisis de gastos"></div>
-            </div>
-        </section>
+      <section class="app-screen" id="screen-experience" aria-label="Experiencia">
+        <div class="screen-header">
+          <p class="screen-eyebrow">Rituales táctiles</p>
+          <h2>Experiencias inmersivas listas para desplegar</h2>
+          <p class="screen-lead">Una suite sensorial que transforma audiencias en devotos: escenarios VR, secuencias de sonido y narrativa viva en cada touchpoint.</p>
+        </div>
+        <div class="experience-showcase">
+          <article class="experience-card">
+            <h3>Escenarios holo-espaciales</h3>
+            <p>Presentaciones envolventes que se adaptan al contexto del usuario en cuestión de milisegundos.</p>
+          </article>
+          <article class="experience-card">
+            <h3>Reproductor de rituales</h3>
+            <p>Coreografías multimedia que combinan luz, vibración y sonido para cada etapa del viaje.</p>
+          </article>
+          <article class="experience-card">
+            <h3>Storyliving dinámico</h3>
+            <p>Scripts narrativos autoajustables con IA que guían a tus comunidades por caminos personalizados.</p>
+          </article>
+        </div>
+        <div class="experience-stats">
+          <div>
+            <span>+280%</span>
+            <p>Incremento en permanencia en experiencia</p>
+          </div>
+          <div>
+            <span>12:1</span>
+            <p>Retorno promedio tras la ceremonia</p>
+          </div>
+          <div>
+            <span>0</span>
+            <p>Latencia percibida por usuarios premium</p>
+          </div>
+        </div>
+        <div class="experience-cta">
+          <button class="primary-button" type="button" data-panel-open>Configurar ritual</button>
+          <button class="ghost-button" type="button" data-toast-trigger>Descargar secuencia demo</button>
+        </div>
+      </section>
 
-        <section class="testimonial">
-            <blockquote>
-                “Logré ordenar mis finanzas en menos de tres meses. La IA me avisó antes de pasarme del presupuesto y automatizó mis ahorros. Ahora invierto con confianza.”
-            </blockquote>
-            <cite>
-                <strong>María Alejandra López</strong>
-                <span>Emprendedora, Medellín</span>
-            </cite>
-        </section>
-
-        <section class="pricing" id="precios">
-            <div class="section__header">
-                <span class="tag">Planes flexibles</span>
-                <h2>Elige el plan que se adapta a tu estilo de vida</h2>
-            </div>
-            <div class="pricing__grid">
-                <article class="price-card">
-                    <h3>Esencial</h3>
-                    <p class="price">$0 <span>/ mes</span></p>
-                    <ul>
-                        <li>Conexión hasta 2 cuentas bancarias</li>
-                        <li>Metas de ahorro ilimitadas</li>
-                        <li>Alertas automáticas por correo</li>
-                    </ul>
-                    <a class="btn btn-outline" href="#demo">Comenzar</a>
-                </article>
-                <article class="price-card price-card--featured" aria-label="Plan más popular">
-                    <div class="badge">Popular</div>
-                    <h3>Pro</h3>
-                    <p class="price">$14 <span>/ mes</span></p>
-                    <ul>
-                        <li>Sincronización tiempo real</li>
-                        <li>Chat de IA ilimitado</li>
-                        <li>Automatizaciones inteligentes</li>
-                        <li>Reportes compartibles</li>
-                    </ul>
-                    <a class="btn btn-primary" href="#demo">Probar 14 días</a>
-                </article>
-                <article class="price-card">
-                    <h3>Empresas</h3>
-                    <p class="price">A medida</p>
-                    <ul>
-                        <li>Onboarding para equipos</li>
-                        <li>API y soporte prioritario</li>
-                        <li>Reportes avanzados</li>
-                    </ul>
-                    <a class="btn btn-outline" href="#demo">Habla con ventas</a>
-                </article>
-            </div>
-        </section>
-
-        <section class="cta" id="demo">
-            <div class="cta__content">
-                <h2>Agenda una demo personalizada</h2>
-                <p>Nuestro equipo te mostrará cómo Ahorra Ya IA puede transformar la salud financiera de tu hogar o empresa.</p>
-            </div>
-            <form class="cta__form" aria-label="Formulario de solicitud de demo">
-                <div class="form-field">
-                    <label for="name">Nombre completo</label>
-                    <input type="text" id="name" name="name" placeholder="Mariana Pérez" required>
-                </div>
-                <div class="form-field">
-                    <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
-                </div>
-                <div class="form-field">
-                    <label for="company">Empresa (opcional)</label>
-                    <input type="text" id="company" name="company" placeholder="Nombre de tu empresa">
-                </div>
-                <button class="btn btn-primary" type="submit">Agendar demo</button>
-                <p class="form-note">Al enviar aceptas nuestra <a href="#">política de privacidad</a>.</p>
-            </form>
-        </section>
-
-        <section class="faq" id="faq">
-            <div class="section__header">
-                <span class="tag">Todo lo que necesitas saber</span>
-                <h2>Preguntas frecuentes</h2>
-            </div>
-            <div class="faq__items">
-                <article class="faq__item">
-                    <button class="faq__question" aria-expanded="false">¿Cómo se conecta Ahorra Ya IA con mis cuentas?</button>
-                    <div class="faq__answer" hidden>
-                        <p>Utilizamos conectores bancarios certificados. Tus credenciales se cifran y nunca se almacenan en texto plano.</p>
-                    </div>
-                </article>
-                <article class="faq__item">
-                    <button class="faq__question" aria-expanded="false">¿Qué tipo de recomendaciones recibiré?</button>
-                    <div class="faq__answer" hidden>
-                        <p>Recibirás alertas personalizadas, oportunidades de inversión acordes a tu perfil y recordatorios de pago para evitar recargos.</p>
-                    </div>
-                </article>
-                <article class="faq__item">
-                    <button class="faq__question" aria-expanded="false">¿Es seguro compartir mis datos?</button>
-                    <div class="faq__answer" hidden>
-                        <p>Contamos con certificaciones SOC 2 y usamos cifrado AES-256 tanto en tránsito como en reposo. Además, puedes revocar el acceso en cualquier momento.</p>
-                    </div>
-                </article>
-                <article class="faq__item">
-                    <button class="faq__question" aria-expanded="false">¿Puedo cancelar en cualquier momento?</button>
-                    <div class="faq__answer" hidden>
-                        <p>Sí, puedes cancelar tu suscripción sin penalizaciones. Tu información seguirá disponible para exportar durante 30 días.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
+      <section class="app-screen" id="screen-concierge" aria-label="Concierge">
+        <div class="screen-header">
+          <p class="screen-eyebrow">Aurvo Concierge</p>
+          <h2>El consejo iluminatti responde 24/7</h2>
+          <p class="screen-lead">Convoca a estrategas, diseñadores y arquitectos tecnológicos desde la misma app. Coordinamos agendas, enviamos entregables y trazamos próximos hitos.</p>
+        </div>
+        <form class="concierge-form" data-concierge novalidate>
+          <label>
+            <span>Nombre ritual</span>
+            <input type="text" name="nombre" placeholder="Tu nombre y círculo" autocomplete="name" required>
+          </label>
+          <label>
+            <span>Contacto</span>
+            <input type="email" name="email" placeholder="hola@visionaria.com" autocomplete="email" required>
+          </label>
+          <label>
+            <span>Acto prioritario</span>
+            <select name="acto" required>
+              <option value="">Selecciona un acto</option>
+              <option value="acto-i">Acto I · Encendido estratégico</option>
+              <option value="acto-ii">Acto II · Prototipado inmersivo</option>
+              <option value="acto-iii">Acto III · Crecimiento perpetuo</option>
+            </select>
+          </label>
+          <label>
+            <span>Mensaje al consejo</span>
+            <textarea name="mensaje" rows="3" placeholder="Describe la visión y el reto que deseas elevar."></textarea>
+          </label>
+          <button class="primary-button" type="submit" data-submit-label="Programar círculo privado" data-loading-label="Enviando ceremonia…">Programar círculo privado</button>
+          <p class="form-status" data-concierge-status aria-live="polite" role="status"></p>
+        </form>
+        <div class="concierge-footer">
+          <p>Tiempo medio de respuesta: <strong>47 minutos</strong>. Seguimiento humano + sintético continuo.</p>
+          <button class="secondary-button" type="button" data-toast-trigger>Hablar con un guardián</button>
+        </div>
+      </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer__brand">
-            <a class="logo" href="#inicio">Ahorra <span>Ya IA</span></a>
-            <p>La plataforma inteligente que impulsa tus metas financieras.</p>
-        </div>
-        <div class="footer__links">
-            <div>
-                <h3>Producto</h3>
-                <ul>
-                    <li><a href="#beneficios">Beneficios</a></li>
-                    <li><a href="#funcionalidades">Funcionalidades</a></li>
-                    <li><a href="#precios">Precios</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>Recursos</h3>
-                <ul>
-                    <li><a href="#faq">Ayuda</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Centro de recursos</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>Compañía</h3>
-                <ul>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Carreras</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer__bottom">
-            <p>© <span id="year"></span> Ahorra Ya IA. Todos los derechos reservados.</p>
-            <div class="footer__legal">
-                <a href="#">Términos</a>
-                <a href="#">Privacidad</a>
-                <a href="#">Seguridad</a>
-            </div>
-        </div>
-    </footer>
+    <nav class="app-nav" aria-label="Navegación principal">
+      <button class="app-nav__item is-active" type="button" data-screen-target="screen-home" data-theme="aurora" aria-pressed="true">
+        <span class="app-nav__icon" aria-hidden="true">✧</span>
+        <span class="app-nav__label">Inicio</span>
+      </button>
+      <button class="app-nav__item" type="button" data-screen-target="screen-orchestra" data-theme="plasma" aria-pressed="false">
+        <span class="app-nav__icon" aria-hidden="true">⚛︎</span>
+        <span class="app-nav__label">Orquestar</span>
+      </button>
+      <button class="app-nav__item" type="button" data-screen-target="screen-experience" data-theme="solstice" aria-pressed="false">
+        <span class="app-nav__icon" aria-hidden="true">☄︎</span>
+        <span class="app-nav__label">Experiencia</span>
+      </button>
+      <button class="app-nav__item" type="button" data-screen-target="screen-concierge" data-theme="noctiluca" aria-pressed="false">
+        <span class="app-nav__icon" aria-hidden="true">☰</span>
+        <span class="app-nav__label">Concierge</span>
+      </button>
+    </nav>
+  </div>
 
-    <script src="assets/js/main.js" defer></script>
+  <aside class="app-panel" role="dialog" aria-modal="true" aria-labelledby="panel-title" hidden data-panel>
+    <div class="app-panel__content">
+      <div class="app-panel__header">
+        <div>
+          <p class="app-panel__eyebrow">Círculo privado</p>
+          <h2 id="panel-title">Reserva tu ceremonia de hiperorquestación</h2>
+        </div>
+        <button class="ghost-button" type="button" data-panel-close aria-label="Cerrar panel">Cerrar</button>
+      </div>
+      <p class="app-panel__lead">Selecciona la intensidad del acompañamiento, elige a tus guardianes y confirma la fecha de tu próxima consagración digital.</p>
+      <div class="panel-options">
+        <article class="panel-card">
+          <h3>Intensidad Bruma</h3>
+          <p>3 semanas de diagnóstico, rituales semanales y acceso a dashboards en vivo.</p>
+          <button class="chip-button" type="button" data-toast-trigger>Reservar Bruma</button>
+        </article>
+        <article class="panel-card">
+          <h3>Intensidad Prisma</h3>
+          <p>6 semanas con prototipos multisensoriales, pruebas con usuarios y oráculo estratégico dedicado.</p>
+          <button class="chip-button" type="button" data-toast-trigger>Reservar Prisma</button>
+        </article>
+        <article class="panel-card">
+          <h3>Intensidad Eclipse</h3>
+          <p>90 días de despliegue total, concierge perpetuo y expansión global guiada.</p>
+          <button class="chip-button" type="button" data-toast-trigger>Reservar Eclipse</button>
+        </article>
+      </div>
+      <button class="primary-button app-panel__cta" type="button" data-toast-trigger>Diseñar plan a medida</button>
+    </div>
+  </aside>
+
+  <div class="app-toast" role="status" aria-live="assertive" hidden data-toast>
+    <span class="app-toast__icon" aria-hidden="true">✶</span>
+    <span class="app-toast__message" data-toast-message>El consejo ha recibido tu invocación.</span>
+  </div>
+
+  <script src="assets/script.js" defer></script>
 </body>
 </html>

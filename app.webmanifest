@@ -1,0 +1,23 @@
+{
+  "name": "Aurvo HyperApp",
+  "short_name": "Aurvo",
+  "description": "Hiperorquestación sintética en una experiencia móvil de lujo desarrollada por Aurvo Studio.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#050510",
+  "theme_color": "#0b0c21",
+  "icons": [
+    {
+      "src": "assets/icon-aurvo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-aurvo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

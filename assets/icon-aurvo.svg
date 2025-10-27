@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="aurvoGlow" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#fdf7ff" stop-opacity="1"/>
+      <stop offset="45%" stop-color="#8d7bff" stop-opacity="0.95"/>
+      <stop offset="70%" stop-color="#5237ff" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0b0c21" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="aurvoRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#74f0ff" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#9f5bff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ff7bda" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="144" fill="#08091c"/>
+  <circle cx="256" cy="256" r="184" fill="url(#aurvoGlow)"/>
+  <circle cx="256" cy="256" r="220" fill="none" stroke="url(#aurvoRing)" stroke-width="36" opacity="0.9"/>
+  <path d="M256 136c-66.274 0-120 53.726-120 120s53.726 120 120 120 120-53.726 120-120-53.726-120-120-120zm0 204c-46.869 0-84-37.131-84-84s37.131-84 84-84 84 37.131 84 84-37.131 84-84 84z" fill="#0b0c21" opacity="0.75"/>
+  <path d="M256 176c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80zm0 126c-25.406 0-46-20.594-46-46s20.594-46 46-46 46 20.594 46 46-20.594 46-46 46z" fill="#f4f8ff"/>
+</svg>
